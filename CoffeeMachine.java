@@ -93,15 +93,33 @@ public class CoffeeMachine {
         System.out.println("Money: $" + money);
     }
 
+
+
     public void showAnalytics() {
         System.out.println("Coffee machine analytics:");
         System.out.println("Espresso sold: " + espressoCount);
         System.out.println("Latte sold: " + latteCount);
         System.out.println("Cappuccino sold: " + cappuccinoCount);
-        System.out.println("Total earnings: $" + espressoCount * espressoPrice + latteCount * lattePrice + cappuccinoCount * cappuccinoPrice);
-        System.out.println("Total water used: " + (espressoCount * Espresso.getEspressoWater() + latteCount * Latte.getLatteWater() + cappuccinoCount * Cappuccino.getCappuccinoWater()) + " ml");
-        System.out.println("Total milk used: " + (latteCount * Latte.getLatteMilk() + cappuccinoCount * Cappuccino.getCappuccinoMilk()) + " ml");
-        System.out.println("Total coffee beans used: " + (espressoCount * Espresso.getEspressoBeans() + latteCount * Latte.getLatteBeans() + cappuccinoCount * Cappuccino.getCappuccinoBeans()) + " units");
+        System.out.println("Total earnings: $" + calculateTotalEarnings());
+        System.out.println("Total water used: " + calculateTotalIngredientUsage("water") + " ml");
+        System.out.println("Total milk used: " + calculateTotalIngredientUsage("milk") + " ml");
+        System.out.println("Total coffee beans used: " + calculateTotalIngredientUsage("coffee_beans") + " units");
     }
+
+    private int calculateTotalEarnings() {
+        return (espressoCount * espressoPrice) + (latteCount * lattePrice) + (cappuccinoCount * cappuccinoPrice);
+    }
+
+    private int calculateTotalIngredientUsage(String ingredient) {
+        int totalUsage = 0;
+        totalUsage += (espressoCount * Espresso.getEspressoWater()) + (latteCount * Latte.getLatteWater()) + (cappuccinoCount * Cappuccino.getCappuccinoWater());
+        if (ingredient.equals("milk")) {
+            totalUsage += (latteCount * Latte.getLatteMilk()) + (cappuccinoCount * Cappuccino.getCappuccinoMilk());
+        } else if (ingredient.equals("coffee_beans")) {
+            totalUsage += (espressoCount * Espresso.getEspressoBeans()) + (latteCount * Latte.getLatteBeans()) + (cappuccinoCount * Cappuccino.getCappuccinoBeans());
+        }
+        return totalUsage;
+    }
+
 
 }
