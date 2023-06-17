@@ -50,7 +50,6 @@ java CoffeeMachineSimulator
 5. Follow the on-screen instructions to interact with the Coffee Machine Simulator.
 
 ## Usage
-
 Once the application is running, you will be presented with a menu of actions to choose from. Enter the corresponding number for the action you want to perform:
 
 1. **Buy coffee**: Select the type of coffee you wish to buy.
@@ -91,13 +90,14 @@ In the Coffee Machine Simulator code provided, several Object-Oriented Programmi
 These are the main OOP concepts used in the provided Coffee Machine Simulator code.
 
 ## Buying Coffee
-
+![Buyingcoffee](https://github.com/poojagurnule/Coffee-Machine-Simulator/assets/102051371/9866ecd8-a7f0-42e4-b3d3-2d34a96ac4e4)
 
 ## Adding ingredients
-
-## Buying Coffee and Seeing Remaining Ingredients and Money Collected So far
+   ![AddingAnalytics](https://github.com/poojagurnule/Coffee-Machine-Simulator/assets/102051371/462218c6-3842-45b0-9fc2-e79929ed3645) 
 
 ## See analytics and Collect Money from Machine
+![seeAnalytics](https://github.com/poojagurnule/Coffee-Machine-Simulator/assets/102051371/a09ce652-3b31-4b76-84bd-b27658327274)
+
 
 
 
